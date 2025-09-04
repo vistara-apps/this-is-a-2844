@@ -14,6 +14,14 @@ export default defineConfig({
         if (warning.code === 'PLUGIN_WARNING' && warning.message.includes('/*#__PURE__*/')) {
           return;
         }
+        // Suppress all warnings related to ox library
+        if (warning.message && warning.message.includes('ox/_esm/')) {
+          return;
+        }
+        // Suppress annotation warnings
+        if (warning.message && warning.message.includes('annotation that Rollup cannot interpret')) {
+          return;
+        }
         warn(warning);
       }
     },
