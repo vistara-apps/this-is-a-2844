@@ -1,9 +1,8 @@
-import React from 'react';
-import { BarChart3, Zap, ArrowLeftRight, Settings, CreditCard } from 'lucide-react';
+import { BarChart3, Zap, ArrowLeftRight, CreditCard } from 'lucide-react';
 
 interface SidebarProps {
   activeView: string;
-  onViewChange: (view: string) => void;
+  onViewChange: (view: 'dashboard' | 'optimizer' | 'swap') => void;
 }
 
 export function Sidebar({ activeView, onViewChange }: SidebarProps) {
@@ -33,7 +32,7 @@ export function Sidebar({ activeView, onViewChange }: SidebarProps) {
             return (
               <li key={item.id}>
                 <button
-                  onClick={() => onViewChange(item.id)}
+                  onClick={() => onViewChange(item.id as 'dashboard' | 'optimizer' | 'swap')}
                   className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-200 ${
                     isActive
                       ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg'

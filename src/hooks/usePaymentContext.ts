@@ -20,7 +20,7 @@ export function usePaymentContext(): {
       },
     });
     
-    const apiClient = withPaymentInterceptor(baseClient, walletClient);
+    const apiClient = withPaymentInterceptor(baseClient, walletClient as any);
     const response = await apiClient.post("/api/payment", { amount: "$0.001" });
     const paymentResponse = response.config.headers["X-PAYMENT"];
     

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { Bell, Search, HelpCircle } from 'lucide-react';
 

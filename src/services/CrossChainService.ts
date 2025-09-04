@@ -258,7 +258,7 @@ export class CrossChainService extends BaseService {
 
   private async getHopQuote(params: SwapParams): Promise<CrossChainQuote | null> {
     try {
-      const response = await this.makeRequest<any>(
+      await this.makeRequest<any>(
         `${this.bridgeEndpoints.hop}/quote`,
         {
           method: 'GET',
@@ -311,8 +311,8 @@ export class CrossChainService extends BaseService {
   }
 
   private async prepareSwapTransaction(
-    params: SwapParams,
-    quote: CrossChainQuote
+    _params: SwapParams,
+    _quote: CrossChainQuote
   ): Promise<ApiResponse<any>> {
     // This would prepare the actual transaction data based on the selected bridge
     // For now, return a mock transaction
@@ -330,18 +330,18 @@ export class CrossChainService extends BaseService {
 
   private async initiateBridgeMonitoring(
     txHash: string,
-    params: SwapParams,
-    quote: CrossChainQuote
+    _params: SwapParams,
+    _quote: CrossChainQuote
   ): Promise<string> {
     // Generate a bridge transaction ID for monitoring
     return `bridge_${txHash.slice(0, 10)}_${Date.now()}`;
   }
 
-  private async getStargateStatus(bridgeTransactionId: string): Promise<BridgeTransaction | null> {
+  private async getStargateStatus(_bridgeTransactionId: string): Promise<BridgeTransaction | null> {
     try {
       // Mock implementation - in reality, you'd query Stargate's API
       return {
-        transactionId: bridgeTransactionId,
+        transactionId: _bridgeTransactionId,
         status: 'pending',
         fromChain: 'Ethereum',
         toChain: 'Base',
@@ -353,12 +353,12 @@ export class CrossChainService extends BaseService {
     }
   }
 
-  private async getHopStatus(bridgeTransactionId: string): Promise<BridgeTransaction | null> {
+  private async getHopStatus(_bridgeTransactionId: string): Promise<BridgeTransaction | null> {
     // Mock implementation
     return null;
   }
 
-  private async getAcrossStatus(bridgeTransactionId: string): Promise<BridgeTransaction | null> {
+  private async getAcrossStatus(_bridgeTransactionId: string): Promise<BridgeTransaction | null> {
     // Mock implementation
     return null;
   }

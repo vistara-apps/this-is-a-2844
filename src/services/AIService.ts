@@ -356,7 +356,7 @@ export class AIService extends BaseService {
     }
   }
 
-  private getFallbackOptimization(request: YieldOptimizationRequest): YieldOptimizationResponse {
+  private getFallbackOptimization(_request: YieldOptimizationRequest): YieldOptimizationResponse {
     // Provide a basic fallback optimization when AI fails
     return {
       recommendations: [

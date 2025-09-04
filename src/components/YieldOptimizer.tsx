@@ -2,7 +2,6 @@ import { useState, useCallback } from 'react';
 import { Zap, Settings, Play, Crown, AlertCircle } from 'lucide-react';
 import { PoolCard } from './PoolCard';
 import { LoadingButton, InlineLoading } from './LoadingStates';
-import { ErrorBoundary } from './ErrorBoundary';
 import { usePoolData } from '../hooks/usePoolData';
 import { useWalletBalances } from '../hooks/useWalletBalances';
 import { usePayment } from '../contexts/PaymentContext';

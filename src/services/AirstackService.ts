@@ -1,7 +1,7 @@
 // Airstack API Service for DeFi Pool Data Aggregation
 
 import { BaseService } from './BaseService';
-import { ApiResponse, AirstackPoolData, AirstackTokenBalance } from '../types/api';
+import { ApiResponse, AirstackTokenBalance } from '../types/api';
 import { Pool } from '../data/mockData';
 
 export class AirstackService extends BaseService {
@@ -156,7 +156,7 @@ export class AirstackService extends BaseService {
   /**
    * Get historical yield data for pools
    */
-  async getPoolHistoricalData(poolId: string, days: number = 30): Promise<ApiResponse<any[]>> {
+  async getPoolHistoricalData(_poolId: string, days: number = 30): Promise<ApiResponse<any[]>> {
     // This would require a more complex query to get historical data
     // For now, return mock historical data
     const mockHistoricalData = Array.from({ length: days }, (_, i) => ({
@@ -199,7 +199,7 @@ export class AirstackService extends BaseService {
   /**
    * Transform Airstack response data to our Pool format
    */
-  private transformToPoolData(airstackData: any): Pool[] {
+  private transformToPoolData(_airstackData: any): Pool[] {
     // This is a simplified transformation
     // In a real implementation, you'd need to aggregate data from multiple sources
     // to get APY, fees, and other pool metrics

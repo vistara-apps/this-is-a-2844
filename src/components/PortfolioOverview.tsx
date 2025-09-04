@@ -1,5 +1,4 @@
-import React from 'react';
-import { Wallet, TrendingUp, DollarSign } from 'lucide-react';
+import { Wallet, DollarSign } from 'lucide-react';
 import type { UserWallet } from '../data/mockData';
 
 interface PortfolioOverviewProps {
@@ -46,7 +45,7 @@ export function PortfolioOverview({ wallets }: PortfolioOverviewProps) {
 
       <div className="space-y-3">
         <h3 className="text-sm font-medium text-dark-muted uppercase tracking-wide">Connected Wallets</h3>
-        {wallets.map((wallet, index) => (
+        {wallets.map((wallet) => (
           <div key={wallet.walletId} className="flex items-center justify-between p-3 bg-dark-bg rounded-lg">
             <div className="flex items-center space-x-3">
               <div className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center text-white text-sm font-medium">

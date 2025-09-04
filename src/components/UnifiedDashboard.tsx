@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { PoolCard } from './PoolCard';
 import { PortfolioOverview } from './PortfolioOverview';
 import { YieldChart } from './YieldChart';

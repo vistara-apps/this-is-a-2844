@@ -3,7 +3,7 @@
 import { Pool, UserWallet } from '../data/mockData';
 import { AIService } from './AIService';
 import { AirstackService } from './AirstackService';
-import { YieldOptimizationRequest, YieldOptimizationResponse } from '../types/api';
+import { YieldOptimizationRequest } from '../types/api';
 
 export interface OptimizationSettings {
   riskTolerance: 'low' | 'medium' | 'high';
@@ -37,7 +37,7 @@ export interface OptimizationResult {
 
 export class YieldOptimizationService {
   private aiService: AIService;
-  private airstackService: AirstackService;
+  private _airstackService: AirstackService; // Reserved for future use
 
   constructor(
     aiProvider: 'openai' | 'anthropic' = 'openai',
@@ -45,7 +45,9 @@ export class YieldOptimizationService {
     airstackApiKey: string
   ) {
     this.aiService = new AIService(aiProvider, aiApiKey);
-    this.airstackService = new AirstackService(airstackApiKey);
+    this._airstackService = new AirstackService(airstackApiKey);
+    // Suppress unused variable warning - reserved for future use
+    void this._airstackService;
   }
 
   /**
@@ -341,7 +343,7 @@ export class YieldOptimizationService {
   private calculateOptimalAllocation(
     totalBalance: number,
     targetPools: Array<Pool & { score: number; riskScore: number }>,
-    settings: OptimizationSettings
+    _settings: OptimizationSettings
   ) {
     const totalScore = targetPools.reduce((sum, pool) => sum + pool.score, 0);
     

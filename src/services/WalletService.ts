@@ -191,7 +191,7 @@ export class WalletService extends BaseService {
     };
   }
 
-  private async listTurnkeyWallets(userId: string): Promise<ApiResponse<Array<{ walletId: string; address: string; chain: string }>>> {
+  private async listTurnkeyWallets(_userId: string): Promise<ApiResponse<Array<{ walletId: string; address: string; chain: string }>>> {
     const response = await this.makeRequest<any>('/public/v1/query/list_wallets', {
       method: 'POST',
       body: JSON.stringify({
