@@ -107,3 +107,12 @@ export const mockUserData = {
     },
   ],
 };
+
+export const chartData = [
+  { month: 'Jan', yield: 4.2 },
+  { month: 'Feb', yield: 5.1 },
+  { month: 'Mar', yield: 6.8 },
+  { month: 'Apr', yield: 7.5 },
+  { month: 'May', yield: 8.9 },
+  { month: 'Jun', yield: 9.2 },
+];
