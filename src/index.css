@@ -4,7 +4,7 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-dark-border;
   }
   
   body {
@@ -13,7 +13,7 @@
   }
   
   html {
-    @apply dark;
+    /* Dark mode is handled by the 'dark' class on the html element */
   }
 }
 
