@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Clock, ArrowUpRight, ArrowDownLeft, RotateCcw } from 'lucide-react';
 import type { Transaction } from '../data/mockData';
 

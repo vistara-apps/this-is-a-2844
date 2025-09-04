@@ -2,6 +2,7 @@ import { useWalletClient } from "wagmi";
 import { useCallback } from "react";
 import axios from "axios";
 import { withPaymentInterceptor, decodeXPaymentResponse } from "x402-axios";
+import { createWalletClient, http, publicActions } from "viem";
 
 export function usePaymentContext(): {
   createSession: () => Promise<void>;
@@ -13,6 +14,13 @@ export function usePaymentContext(): {
     if (isError) throw new Error("wallet not connected");
     if (isLoading) throw new Error("wallet is loading");
     
+    // Create a proper SignerWallet that includes both public and wallet actions
+    const signerWallet = createWalletClient({
+      account: walletClient.account,
+      chain: walletClient.chain,
+      transport: http(walletClient.transport.url || walletClient.chain?.rpcUrls.default.http[0])
+    }).extend(publicActions);
+    
     const baseClient = axios.create({
       baseURL: "https://payments.vistara.dev",
       headers: {
@@ -20,7 +28,7 @@ export function usePaymentContext(): {
       },
     });
     
-    const apiClient = withPaymentInterceptor(baseClient, walletClient);
+    const apiClient = withPaymentInterceptor(baseClient, signerWallet);
     const response = await apiClient.post("/api/payment", { amount: "$0.001" });
     const paymentResponse = response.config.headers["X-PAYMENT"];
     

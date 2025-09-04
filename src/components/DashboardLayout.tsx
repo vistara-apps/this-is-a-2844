@@ -1,12 +1,11 @@
-import React from 'react';
-import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { ReactNode } from 'react';
 import { Sidebar } from './Sidebar';
 import { TopBar } from './TopBar';
 
 interface DashboardLayoutProps {
-  children: React.ReactNode;
+  children: ReactNode;
   activeView: string;
-  onViewChange: (view: string) => void;
+  onViewChange: (view: 'dashboard' | 'optimizer' | 'swap') => void;
 }
 
 export function DashboardLayout({ children, activeView, onViewChange }: DashboardLayoutProps) {

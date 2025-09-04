@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ArrowLeftRight, RefreshCw, Crown } from 'lucide-react';
 import { usePayment } from '../contexts/PaymentContext';
 import { usePaymentContext } from '../hooks/usePaymentContext';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { TrendingUp, ExternalLink } from 'lucide-react';
 import type { Pool } from '../data/mockData';
 
@@ -7,7 +6,7 @@ interface PoolCardProps {
   variant?: 'default' | 'expanded' | 'collapsed';
 }
 
-export function PoolCard({ pool, variant = 'default' }: PoolCardProps) {
+export function PoolCard({ pool }: PoolCardProps) {
   const formatNumber = (num: number) => {
     if (num >= 1000000) {
       return `$${(num / 1000000).toFixed(1)}M`;
