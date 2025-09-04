@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import { Zap, Settings, Play, Crown, AlertCircle } from 'lucide-react';
 import { PoolCard } from './PoolCard';
 import { LoadingButton, InlineLoading } from './LoadingStates';
@@ -174,7 +174,7 @@ export function YieldOptimizer() {
               </label>
               <select
                 value={riskLevel}
-                onChange={(e) => setRiskLevel(e.target.value)}
+                onChange={(e) => setRiskLevel(e.target.value as 'low' | 'medium' | 'high')}
                 className="w-full p-3 bg-dark-bg border border-dark-border rounded-lg text-dark-text focus:outline-none focus:ring-2 focus:ring-purple-500"
               >
                 <option value="low">Low Risk</option>

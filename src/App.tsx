@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import DashboardLayout from './components/DashboardLayout';
+import { useState } from 'react';
+import { DashboardLayout } from './components/DashboardLayout';
 import { UnifiedDashboard } from './components/UnifiedDashboard';
-import YieldOptimizer from './components/YieldOptimizer';
-import CrossChainSwap from './components/CrossChainSwap';
+import { YieldOptimizer } from './components/YieldOptimizer';
+import { CrossChainSwap } from './components/CrossChainSwap';
 import { PaymentProvider } from './contexts/PaymentContext';
 
 type ActiveView = 'dashboard' | 'optimizer' | 'swap';
@@ -25,7 +25,7 @@ function App() {
 
   return (
     <PaymentProvider>
-      <DashboardLayout activeView={activeView} onViewChange={setActiveView}>
+      <DashboardLayout activeView={activeView} onViewChange={(view: string) => setActiveView(view as ActiveView)}>
         {renderActiveView()}
       </DashboardLayout>
     </PaymentProvider>

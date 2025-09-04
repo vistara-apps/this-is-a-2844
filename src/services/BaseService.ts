@@ -32,7 +32,7 @@ export class BaseService {
     };
 
     if (this.apiKey) {
-      headers['Authorization'] = `Bearer ${this.apiKey}`;
+      (headers as any)['Authorization'] = `Bearer ${this.apiKey}`;
     }
 
     const requestOptions: RequestInit = {
