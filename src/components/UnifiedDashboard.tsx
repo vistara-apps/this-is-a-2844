@@ -1,5 +1,5 @@
 import React from 'react';
-import { PoolCard } from './PoolCard';
+import PoolCard from './PoolCard';
 import { PortfolioOverview } from './PortfolioOverview';
 import { YieldChart } from './YieldChart';
 import { RecentTransactions } from './RecentTransactions';

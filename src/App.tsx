@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { DashboardLayout } from './components/DashboardLayout';
+import DashboardLayout from './components/DashboardLayout';
 import { UnifiedDashboard } from './components/UnifiedDashboard';
-import { YieldOptimizer } from './components/YieldOptimizer';
-import { CrossChainSwap } from './components/CrossChainSwap';
+import YieldOptimizer from './components/YieldOptimizer';
+import CrossChainSwap from './components/CrossChainSwap';
 import { PaymentProvider } from './contexts/PaymentContext';
 
 type ActiveView = 'dashboard' | 'optimizer' | 'swap';
