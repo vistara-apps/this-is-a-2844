@@ -12,10 +12,22 @@ export default {
         primary: 'hsl(220 8% 22%)',
         surface: 'hsl(210 40% 98%)',
         dark: {
-          bg: 'hsl(250 30% 8%)',
-          surface: 'hsl(250 25% 12%)',
-          accent: 'hsl(260 100% 70%)',
-          primary: 'hsl(210 40% 96%)',
+          bg: 'hsl(240 20% 8%)',
+          surface: 'hsl(240 15% 12%)',
+          card: 'hsl(240 12% 16%)',
+          border: 'hsl(240 8% 24%)',
+          text: 'hsl(240 5% 92%)',
+          muted: 'hsl(240 5% 64%)',
+        },
+        purple: {
+          500: 'hsl(260 100% 70%)',
+          600: 'hsl(260 100% 65%)',
+          700: 'hsl(260 100% 60%)',
+        },
+        blue: {
+          500: 'hsl(220 100% 70%)',
+          600: 'hsl(220 100% 65%)',
+          700: 'hsl(220 100% 60%)',
         }
       },
       borderRadius: {
@@ -30,32 +42,15 @@ export default {
       },
       boxShadow: {
         'card': '0 4px 12px hsla(220, 10%, 70%, 0.2)',
-        'dark-card': '0 4px 20px hsla(250, 30%, 5%, 0.4)',
+        'dark-card': '0 4px 12px hsla(240, 80%, 10%, 0.6)',
       },
       fontSize: {
-        'display': ['3rem', { lineHeight: '1.1', fontWeight: '800' }],
+        'display': ['3rem', { lineHeight: '1.2', fontWeight: '800' }],
         'heading': ['1.5rem', { lineHeight: '1.3', fontWeight: '600' }],
         'body': ['1.125rem', { lineHeight: '1.8' }],
-      },
-      animation: {
-        'gradient': 'gradient 6s ease infinite',
-        'float': 'float 3s ease-in-out infinite',
-      },
-      keyframes: {
-        gradient: {
-          '0%, 100%': { backgroundPosition: '0% 50%' },
-          '50%': { backgroundPosition: '100% 50%' },
-        },
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-10px)' },
-        }
-      },
-      backgroundImage: {
-        'gradient-primary': 'linear-gradient(-45deg, hsl(260 100% 70%), hsl(280 100% 60%), hsl(300 100% 65%), hsl(320 100% 70%))',
-        'gradient-dark': 'linear-gradient(135deg, hsl(250 30% 8%) 0%, hsl(260 40% 12%) 50%, hsl(270 30% 8%) 100%)',
       }
     },
   },
+  darkMode: 'class',
   plugins: [],
 }
